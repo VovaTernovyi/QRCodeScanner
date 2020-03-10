@@ -11,20 +11,20 @@ import androidx.lifecycle.ViewModelProviders
 import com.qrcodescanner.R
 
 
-class DashboardFragment : Fragment() {
+class GroupsFragment : Fragment() {
 
-    private lateinit var dashboardViewModel: DashboardViewModel
+    private lateinit var groupsViewModel: GroupsViewModel
 
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        dashboardViewModel =
-            ViewModelProviders.of(this).get(DashboardViewModel::class.java)
-        val root = inflater.inflate(R.layout.fragment_dashboard, container, false)
+        groupsViewModel =
+            ViewModelProviders.of(this).get(GroupsViewModel::class.java)
+        val root = inflater.inflate(R.layout.fragment_groups, container, false)
         val textView: TextView = root.findViewById(R.id.text_dashboard)
-        dashboardViewModel.text.observe(viewLifecycleOwner, Observer {
+        groupsViewModel.text.observe(viewLifecycleOwner, Observer {
             textView.text = it
         })
         return root

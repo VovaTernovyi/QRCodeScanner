@@ -1,25 +1,21 @@
 package com.qrcodescanner.lecturer.ui.home
 
-import android.R.attr
 import android.content.Intent
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.TextView
 import android.widget.Toast
 import androidx.fragment.app.Fragment
-import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
-import androidx.lifecycle.ViewModelProviders
 import com.google.zxing.integration.android.IntentIntegrator
 import com.qrcodescanner.R
-import kotlinx.android.synthetic.main.fragment_home.*
+import kotlinx.android.synthetic.main.fragment_scanner.*
 
 
-class HomeFragment : Fragment() {
+class ScannerFragment : Fragment() {
 
-    private lateinit var homeViewModel: HomeViewModel
+    private lateinit var scannerViewModel: ScannerViewModel
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -27,8 +23,8 @@ class HomeFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
 
-        homeViewModel = ViewModelProvider(this).get(HomeViewModel::class.java)
-        val root = inflater.inflate(R.layout.fragment_home, container, false)
+        scannerViewModel = ViewModelProvider(this).get(ScannerViewModel::class.java)
+        val root = inflater.inflate(R.layout.fragment_scanner, container, false)
 //        homeViewModel.text.observe(viewLifecycleOwner, Observer {
 //            scan_result_text.text = it
 //        })
